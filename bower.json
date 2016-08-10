@@ -1,0 +1,24 @@
+{
+  "name": "angular-ui-tree-select",
+  "authors": [
+    "msyesyan <msyesyan@gmail.com>"
+  ],
+  "description": "This is a tree style select plugin, based on angular-ui-tree and ui-select",
+  "main": "",
+  "keywords": [
+    "nested",
+    "json",
+    "data",
+    "tree",
+    "select"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
