@@ -1,0 +1,9 @@
+{
+  "name": "angular-ui-tree-select",
+  "devDependencies": {},
+  "scripts": {
+    "build:css": "node-sass -rw src/scss -o dist/css",
+    "build:js": "browserify src/javascript/angular-ui-tree-select.js > dist/javascript/angular-ui-tree-select.js",
+    "build": "npm run build:css && npm run build:js"
+  }
+}

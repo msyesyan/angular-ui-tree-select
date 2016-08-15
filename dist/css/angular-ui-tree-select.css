@@ -1,0 +1,65 @@
+.tree-select-picker {
+  background: #fff; }
+  .tree-select-picker .angular-ui-tree {
+    border: 1px solid #ccc;
+    overflow: auto; }
+  .tree-select-picker .angular-ui-tree-nodes {
+    margin: 0px; }
+  .tree-select-picker .angular-ui-tree-node {
+    padding: 0.2em 0; }
+  .tree-select-picker .tree-select-node {
+    padding: 0 0.5em; }
+    .tree-select-picker .tree-select-node a {
+      font-size: 0.8em; }
+    .tree-select-picker .tree-select-node.divider {
+      border-bottom: 1px solid #ececec; }
+    .tree-select-picker .tree-select-node.multi-select-action:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+      cursor: pointer; }
+    .tree-select-picker .tree-select-node > span {
+      font-size: 0.8em;
+      font-weight: normal;
+      margin-left: 1em; }
+      .tree-select-picker .tree-select-node > span.checked {
+        background: #e0eaf3; }
+      .tree-select-picker .tree-select-node > span:hover {
+        cursor: pointer;
+        font-weight: bold; }
+  .tree-select-picker .angular-ui-tree-handle {
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-left: 1.2em;
+    padding: 0.315em 0;
+    position: relative; }
+    .tree-select-picker .angular-ui-tree-handle:hover {
+      font-weight: bold; }
+    .tree-select-picker .angular-ui-tree-handle.collapsible {
+      border-bottom: 1px solid #ccc; }
+    .tree-select-picker .angular-ui-tree-handle .icon-dropdown-arrow, .tree-select-picker .angular-ui-tree-handle .icon-collapse-arrow {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      vertical-align: middle; }
+    .tree-select-picker .angular-ui-tree-handle .icon-collapse-arrow {
+      transform: rotate(-90deg);
+      transform-origin: 45% 55%;
+      vertical-align: middle; }
+    .tree-select-picker .angular-ui-tree-handle a {
+      left: -1.45em;
+      position: absolute;
+      top: 0.2em; }
+    .tree-select-picker .angular-ui-tree-handle > span {
+      display: block;
+      text-align: left; }
+      .tree-select-picker .angular-ui-tree-handle > span.checked {
+        background: #e0eaf3; }
+  .tree-select-picker .angular-ui-tree-empty {
+    background: transparent;
+    border: none;
+    min-height: 32px; }
+  .tree-select-picker .ui-select-highlight {
+    background: #e0eaf3; }

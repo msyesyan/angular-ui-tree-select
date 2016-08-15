@@ -1,0 +1,111 @@
+@import 'angular-ui-tree-select/variables';
+
+.tree-select-picker {
+  background: $white;
+
+  .angular-ui-tree {
+    border: 1px solid $gray-4;
+    overflow: auto;
+  }
+
+  .angular-ui-tree-nodes {
+    margin: 0px;
+  }
+
+  .angular-ui-tree-node {
+    padding: 0.2em 0;
+  }
+
+  .tree-select-node {
+    padding: 0 0.5em;
+
+    a {
+      font-size: 0.8em;
+    }
+
+    &.divider {
+      border-bottom: 1px solid $gray-2;
+    }
+
+    &.multi-select-action:hover {
+      background-color: $column-chooser-hover-color;
+      cursor: pointer;
+    }
+
+    > span {
+      font-size: 0.8em;
+      font-weight: normal;
+      margin-left: 1em;
+
+      &.checked {
+        background: $blue-light;
+      }
+
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .angular-ui-tree-handle {
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-left: 1.2em;
+    padding: 0.315em 0;
+    position: relative;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+    &.collapsible {
+      border-bottom: 1px solid $gray-4;
+    }
+
+    .icon-dropdown-arrow {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+
+      vertical-align: middle;
+    }
+
+    .icon-collapse-arrow {
+      @extend .icon-dropdown-arrow;
+      transform: rotate(-90deg);
+      transform-origin: 45% 55%;
+
+      vertical-align: middle;
+    }
+
+    a {
+      left: -1.45em;
+      position: absolute;
+      top: 0.2em;
+    }
+
+    > span {
+      display: block;
+      text-align: left;
+
+      &.checked {
+        background: $blue-light;
+      }
+    }
+  }
+
+  .angular-ui-tree-empty {
+    background: transparent;
+    border: none;
+    min-height: 32px;
+  }
+
+  .ui-select-highlight {
+    background: $blue-light;
+  }
+}

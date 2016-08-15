@@ -1,0 +1,130 @@
+<!Doctype html>
+<html>
+  <head>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.js"></script>
+    <script src="../bower_components/jspath/lib/jspath.js"></script>
+    <script src="../dist/javascript/angular-ui-tree-select.js" type="text/javascript" charset="utf-8"></script>
+    <link ref="stylesheet" type="text/css" href="../bower_components/angular-ui-tree/dist/angular-ui-tree.css"></script>
+    <link ref="stylesheet" type="text/css" href="../dist/css/angular-ui-tree-select.css" />
+  </head>
+  <body ng-app="ui.tree.select">
+    <ui-tree-select tree-model="defaultLocations"
+      node-id="uuid"
+      node-children="children"
+      node-label="name"
+      position="absolute"
+      class-name="tree-select-picker__add_activity_modal"
+      node-path="path"
+      use-node-path="true"
+      bind="activity.location">
+    </ui-tree-select>
+
+    <script>
+      (function() {
+        angular.module('ui.tree.select')
+        .run(function($rootScope) {
+          $rootScope.defaultLocations = [
+            {
+              uuid: '89775d49-4dbf-4999-afec-d80fad7ee33e',
+              name: 'MOB',
+              path: 'MOB',
+              children: [
+                {
+                  uuid: '33dd506a-9e2a-487f-8fb9-56cc04ff6c7a',
+                  name: 'Floor 1',
+                  path: 'MOB>Floor 1',
+                  children: [
+                    {
+                      uuid: 'a3355935-2623-4198-85c8-d0f540d5ccf4',
+                      name: 'Area A',
+                      path: 'MOB>Floor 1>Area A',
+                      children: []
+                    }
+                  ]
+                },
+                {
+                  uuid: '3f5fd3f1-03f7-4e11-ad15-410eaf8e95bb',
+                  name: 'Floor 2',
+                  path: 'MOB>Floor 2',
+                  children: []
+                }
+              ]
+            },
+            {
+              uuid: '89775d49-4dbf-4999-afec-d80fad7ee33f',
+              name: 'CAN',
+              path: 'CAN',
+              children: []
+            }
+          ];
+        });
+      })();
+    </script>
+
+    <script type="text/ng-template" id="/uiTreeSelect.html">
+      <input type="text" ng-model="selectionPhrase"
+        title="{{bind[nodePath]}}"
+        placeholder="{{placeholderText}}">
+      </input>
+
+      <div ng-show="show" class="tree-select-picker">
+        <div ui-tree id="tree-root" ng-style="pickerStyle">
+          <ol ui-tree-nodes ng-model="treeModel">
+            <li class="tree-select-node multi-select-action" ng-if="multiSelect">
+              <a ng-click="selectAll()" data-role="select_all">
+                <i class="icon-ok-sign"></i>
+                {{selectAllText || 'Select All'}}
+              </a>
+            </li>
+
+            <li class="tree-select-node multi-select-action divider" ng-if="multiSelect">
+              <a ng-click="deselectAll()" data-role="deselect_all">
+                <i class="icon-remove-sign"></i>
+                {{deselectAllText || 'Deselect All'}}
+              </a>
+            </li>
+
+            <li class="tree-select-node" ng-if="isNoneIncluded()" class="tree-select-node">
+              <span ng-click="toggleNone()" data-role="toggle-none" ng-class="{checked : isNoneIncluded()}">
+                ({{noneText || 'None'}})
+              </span>
+            </li>
+
+            <li class="tree-select-node"
+                node-id="{{node.uuid}}"
+                ng-repeat="node in treeModel|filter:filterTree"
+                ui-tree-node nodrag
+                ng-include="'nodes_renderer.html'" collapsed="node.collapsed">
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <script type="text/ng-template" id="nodes_renderer.html">
+        <div ui-tree-handle class="tree-node tree-node-content"
+          ng-class="{collapsible: hasChild()}">
+          <a ng-if="hasChild()" ng-click="toggle(this)">
+            <i class="icon" ng-class=
+              "{'icon-collapse-arrow': collapsed,
+                'icon-dropdown-arrow': !collapsed}">
+            </i>
+          </a>
+          <span select-class="{'selected': $optSelected}" ng-click="selectNode(node)" ng-class="{checked : isChecked(node)}">
+            <span ng-bind-html="trustAsHtml(node.searchLabel)"></span>
+          </span>
+        </div>
+        <ol ui-tree-nodes="" ng-model="node[nodeChildren]"
+          ng-show="!collapsed">
+          <li node-id="{{node.uuid}}" ng-repeat="node in node[nodeChildren]|filter:filterTree"
+            ui-tree-node nodrag ng-include="'nodes_renderer.html'"
+            collapsed="node.collapsed">
+          </li>
+        </ol>
+      </script>
+
+    </script>
+  </body>
+</html>
