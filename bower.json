@@ -22,7 +22,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "dummy"
   ],
   "dependencies": {
     "angular": "^1.5.8",

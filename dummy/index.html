@@ -1,14 +1,14 @@
 <!Doctype html>
 <html>
   <head>
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
-    <script src="../bower_components/lodash/dist/lodash.js"></script>
-    <script src="../bower_components/jspath/lib/jspath.js"></script>
-    <script src="../dist/javascript/angular-ui-tree-select.js" type="text/javascript" charset="utf-8"></script>
-    <link ref="stylesheet" type="text/css" href="../bower_components/angular-ui-tree/dist/angular-ui-tree.css"></script>
-    <link ref="stylesheet" type="text/css" href="../dist/css/angular-ui-tree-select.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-tree-select/dist/css/angular-ui-tree-select.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/jspath/lib/jspath.js"></script>
+    <script src="bower_components/angular-ui-tree-select/dist/javascript/angular-ui-tree-select.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body ng-app="ui.tree.select">
     <ui-tree-select tree-model="defaultLocations"
@@ -16,7 +16,7 @@
       node-children="children"
       node-label="name"
       position="absolute"
-      class-name="tree-select-picker__add_activity_modal"
+      class-name="tree-select-picker__custom"
       node-path="path"
       use-node-path="true"
       bind="activity.location">
